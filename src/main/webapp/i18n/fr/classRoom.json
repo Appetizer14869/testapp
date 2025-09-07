@@ -1,0 +1,25 @@
+{
+  "testappApp": {
+    "classRoom": {
+      "home": {
+        "title": "ClassRooms",
+        "refreshListLabel": "Actualiser la liste",
+        "createLabel": "Créer un nouveau Class Room",
+        "createOrEditLabel": "Créer ou éditer un Class Room",
+        "notFound": "Aucun Class Room trouvé"
+      },
+      "created": "Un nouveau Class Room a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Class Room avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Class Room avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Êtes-vous certain de vouloir supprimer le Class Room {{ id }} ?"
+      },
+      "detail": {
+        "title": "Class Room"
+      },
+      "id": "ID",
+      "roomNumber": "Room Number",
+      "capacity": "Capacity"
+    }
+  }
+}

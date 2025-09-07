@@ -1,0 +1,22 @@
+{
+  "annotations": {
+    "changelogDate": "20250907072935"
+  },
+  "applications": "*",
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "roomNumber",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "capacity",
+      "fieldType": "Integer"
+    }
+  ],
+  "name": "ClassRoom",
+  "relationships": [],
+  "searchEngine": "no",
+  "service": "serviceImpl"
+}
