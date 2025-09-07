@@ -1,0 +1,117 @@
+/**
+ * School Management System JDL
+ * Generated for JHipster
+ */
+
+entity Student {
+    firstName String required
+    lastName String required
+    email String required
+    phoneNumber String
+    enrollmentDate Instant
+}
+
+entity Teacher {
+    firstName String required
+    lastName String required
+    email String required
+    phoneNumber String
+    hireDate Instant
+    salary Long
+}
+
+entity Department {
+    name String required
+    description String
+}
+
+entity Course {
+    title String required
+    description String
+    credits Integer required
+}
+
+entity ClassRoom {
+    roomNumber String required
+    capacity Integer
+}
+
+entity Subject {
+    subjectName String required
+    description String
+}
+
+entity Grade {
+    score Double required
+    remarks String
+    dateAwarded Instant
+}
+
+entity Parent {
+    firstName String required
+    lastName String required
+    email String
+    phoneNumber String
+}
+
+/** Enum for academic level */
+enum AcademicLevel {
+    KINDERGARTEN, PRIMARY, SECONDARY, UNDERGRADUATE, POSTGRADUATE
+}
+
+/** =======================
+ * Relationships
+ * ======================= */
+
+/* Departments manage teachers */
+relationship OneToMany {
+    Department to Teacher{department}
+}
+
+/* Teachers teach subjects */
+relationship OneToMany {
+    Teacher to Subject{teacher}
+}
+
+/* Subjects are assigned to courses */
+relationship ManyToMany {
+    Course{subject(subjectName)} to Subject{course}
+}
+
+/* Students enroll in courses */
+relationship ManyToMany {
+    Student{course(title)} to Course{student}
+}
+
+/* Students are placed in classrooms */
+relationship ManyToOne {
+    Student{classroom} to ClassRoom
+}
+
+/* Parent-Student relationship */
+relationship OneToMany {
+    Parent to Student{parent}
+}
+
+/* Grades belong to a student and a subject */
+relationship ManyToOne {
+    Grade{student} to Student
+    Grade{subject} to Subject
+}
+
+/** =======================
+ * Pagination
+ * ======================= */
+paginate Student, Teacher, Course with pagination
+paginate Grade with infinite-scroll
+
+/** =======================
+ * DTO & Service
+ * ======================= */
+dto * with mapstruct
+service all with serviceImpl except Grade
+
+/** =======================
+ * Angular suffix (optional)
+ * ======================= */
+// angularSuffix * with schoolSuffix
