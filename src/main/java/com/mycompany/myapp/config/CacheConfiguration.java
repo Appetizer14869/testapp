@@ -50,6 +50,21 @@ public class CacheConfiguration {
             createCache(cm, com.mycompany.myapp.domain.User.class.getName());
             createCache(cm, com.mycompany.myapp.domain.Authority.class.getName());
             createCache(cm, com.mycompany.myapp.domain.User.class.getName() + ".authorities");
+            createCache(cm, com.mycompany.myapp.domain.Student.class.getName());
+            createCache(cm, com.mycompany.myapp.domain.Student.class.getName() + ".courses");
+            createCache(cm, com.mycompany.myapp.domain.Teacher.class.getName());
+            createCache(cm, com.mycompany.myapp.domain.Teacher.class.getName() + ".subjects");
+            createCache(cm, com.mycompany.myapp.domain.Department.class.getName());
+            createCache(cm, com.mycompany.myapp.domain.Department.class.getName() + ".teachers");
+            createCache(cm, com.mycompany.myapp.domain.Course.class.getName());
+            createCache(cm, com.mycompany.myapp.domain.Course.class.getName() + ".subjects");
+            createCache(cm, com.mycompany.myapp.domain.Course.class.getName() + ".students");
+            createCache(cm, com.mycompany.myapp.domain.ClassRoom.class.getName());
+            createCache(cm, com.mycompany.myapp.domain.Subject.class.getName());
+            createCache(cm, com.mycompany.myapp.domain.Subject.class.getName() + ".courses");
+            createCache(cm, com.mycompany.myapp.domain.Grade.class.getName());
+            createCache(cm, com.mycompany.myapp.domain.Parent.class.getName());
+            createCache(cm, com.mycompany.myapp.domain.Parent.class.getName() + ".students");
             // jhipster-needle-ehcache-add-entry
         };
     }

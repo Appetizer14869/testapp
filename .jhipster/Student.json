@@ -1,0 +1,59 @@
+{
+  "annotations": {
+    "changelogDate": "20250907072931"
+  },
+  "applications": "*",
+  "documentation": "School Management System JDL\\nGenerated for JHipster",
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "firstName",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "lastName",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "email",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "phoneNumber",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "enrollmentDate",
+      "fieldType": "Instant"
+    }
+  ],
+  "name": "Student",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityName": "classRoom",
+      "relationshipName": "classroom",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityField": "title",
+      "otherEntityName": "course",
+      "otherEntityRelationshipName": "student",
+      "relationshipName": "course",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-many"
+    },
+    {
+      "otherEntityName": "parent",
+      "relationshipName": "parent",
+      "relationshipSide": "right",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceImpl"
+}

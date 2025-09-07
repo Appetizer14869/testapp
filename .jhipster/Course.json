@@ -1,0 +1,44 @@
+{
+  "annotations": {
+    "changelogDate": "20250907072934"
+  },
+  "applications": "*",
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "title",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "credits",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "name": "Course",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityField": "subjectName",
+      "otherEntityName": "subject",
+      "otherEntityRelationshipName": "course",
+      "relationshipName": "subject",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-many"
+    },
+    {
+      "otherEntityName": "student",
+      "otherEntityRelationshipName": "course",
+      "relationshipName": "student",
+      "relationshipSide": "right",
+      "relationshipType": "many-to-many"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceImpl"
+}
